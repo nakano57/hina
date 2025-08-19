@@ -3,7 +3,7 @@ name: Update-Global
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 19 * * *'
+    - cron: "0 19 * * *"
 
 permissions: write-all
 
@@ -14,20 +14,22 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
         with:
-          ref: 'global' # Get the right branch
-          fetch-depth: '0' # Get all branch first
+          ref: "global" # Get the right branch
+          fetch-depth: "0" # Get all branch first
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
       - name: Installing requirements
         run: |
-          pip install -r requirements.txt 
+          uv pip install -r requirements.txt
       - name: Retrieving models
         run: |
-          python ./py/getModelsGlobal.py
+          uv python ./py/getModelsGlobal.py
       - name: Generating models.json
         run: |
-          python ./py/generateModelsJson.py
+          uv python ./py/generateModelsJson.py
       - name: Generating audio.json
         run: |
-          python ./py/generateAudioJsonGlobal.py
+          uv python ./py/generateAudioJsonGlobal.py
       - name: Commit files
         run: |
           git add .

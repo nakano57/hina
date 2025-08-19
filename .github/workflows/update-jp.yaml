@@ -12,17 +12,19 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
         with:
-          ref: 'jp' # Get the right branch
-          fetch-depth: '0' # Get all branch first
+          ref: "jp" # Get the right branch
+          fetch-depth: "0" # Get all branch first
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
       - name: Installing requirements
         run: |
-          pip install -r requirements.txt 
+          uv pip install -r requirements.txt
       - name: Retrieving models
         run: |
-          python ./py/getModelsJapan.py
+          uv python ./py/getModelsJapan.py
       - name: Generating models.json
         run: |
-          python ./py/generateModelsJson.py
+          uv python ./py/generateModelsJson.py
       - name: Generating audio.json
         run: |
           python ./py/generateAudioJsonJapan.py
