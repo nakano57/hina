@@ -18,13 +18,13 @@ jobs:
         uses: astral-sh/setup-uv@v3
       - name: Installing requirements
         run: |
-          uv pip install -r requirements.txt
+          uv pip install --system -r requirements.txt
       - name: Retrieving models
         run: |
-          uv python ./py/getModelsJapan.py
+          uv run --system python ./py/getModelsJapan.py
       - name: Generating models.json
         run: |
-          uv python ./py/generateModelsJson.py
+          uv run --system python ./py/generateModelsJson.py
       - name: Generating audio.json
         run: |
           python ./py/generateAudioJsonJapan.py
