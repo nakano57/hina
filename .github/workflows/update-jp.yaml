@@ -27,7 +27,7 @@ jobs:
           uv run python ./py/generateModelsJson.py
       - name: Generating audio.json
         run: |
-          python ./py/generateAudioJsonJapan.py
+          uv run python ./py/generateAudioJsonJapan.py
       - name: Commit files
         run: |
           git add .
