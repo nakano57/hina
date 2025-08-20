@@ -64,7 +64,7 @@ function onAssetsLoaded(loader, res) {
     let a = document.createElement("option");
     a.value = a.innerHTML = animations[i].name;
     option.animations.append(a);
-    if (animations[i].name == "Start_Idle_01") check = 1;
+    if (animations[i].name == "Idle_01") check = 1;
   }
 
   //Play Animation
@@ -75,7 +75,7 @@ function onAssetsLoaded(loader, res) {
       optionAnimations.value = "Start_Idle_01";
       isFirstLoad = false;
     } else {
-      char.state.setAnimation(0, "Idle_01", option.loop.checked);
+      char.state.setAnimation(0, "Idle_01", option.loop.checked, 1);
       optionAnimations.value = "Idle_01";
     }
   } else {
