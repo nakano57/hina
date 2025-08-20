@@ -71,11 +71,11 @@ function onAssetsLoaded(loader, res) {
   if (check) {
     if (isFirstLoad && animations.find((a) => a.name === "Start_Idle_01")) {
       char.state.setAnimation(0, "Start_Idle_01", false);
-      char.state.addAnimation(0, "Idle_01", option.loop.checked, 0);
+      char.state.addAnimation(0, "Idle_01", option.loop.checked, 1);
       optionAnimations.value = "Start_Idle_01";
       isFirstLoad = false;
     } else {
-      char.state.setAnimation(0, "Idle_01", option.loop.checked, 1);
+      char.state.setAnimation(0, "Idle_01", option.loop.checked);
       optionAnimations.value = "Idle_01";
     }
   } else {
