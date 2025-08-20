@@ -93,6 +93,8 @@ function onAssetsLoaded(loader, res) {
   } else {
     char.state.setAnimation(0, animations[0].name, option.loop.checked);
   }
+  // Hide loading when animation starts
+  document.getElementById('loading').style.display = 'none';
   // Voiceline Listener / Handler
   char.state.addListener({
     event: function (entry, event) {
