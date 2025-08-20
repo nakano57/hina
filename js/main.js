@@ -6,7 +6,7 @@ let isCharacterLoaded = false;
 let debug = 0; //set via console
 let isFirstLoad = true;
 
-function loadChar(model = "./assets/spine/hina_home/Hina_home.skel") {
+function loadChar(model = "./assets/spine/ch_0063_home/CH0063_home.skel") {
   isCharacterLoaded = false;
   // remove previous spine
   if (app.stage.children.length > 0) {
