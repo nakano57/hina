@@ -19,7 +19,7 @@ function getDefaultModel() {
 
 function loadChar(model = getDefaultModel()) {
   isCharacterLoaded = false;
-  document.getElementById('loading').style.display = 'block';
+  document.getElementById("loading").style.display = "block";
   // remove previous spine
   if (app.stage.children.length > 0) {
     app.stage.children.pop();
@@ -94,7 +94,7 @@ function onAssetsLoaded(loader, res) {
     char.state.setAnimation(0, animations[0].name, option.loop.checked);
   }
   // Hide loading when animation starts
-  document.getElementById('loading').style.display = 'none';
+  document.getElementById("loading").style.display = "none";
   // Voiceline Listener / Handler
   char.state.addListener({
     event: function (entry, event) {
@@ -133,10 +133,6 @@ function onAssetsLoaded(loader, res) {
   //Add to main canvas
   app.stage.addChild(char);
   isCharacterLoaded = true;
-  // Ensure loading is hidden even with cache hits
-  setTimeout(() => {
-    document.getElementById('loading').style.display = 'none';
-  }, 100);
 }
 
 function playAnimation(name) {
