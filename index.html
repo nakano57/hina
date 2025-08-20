@@ -45,7 +45,7 @@
   </head>
 
   <body>
-    <nav
+    <!-- <nav
       class="uk-navbar-container uk-navbar-transparent"
       uk-navbar
       style="position: fixed"
@@ -63,7 +63,7 @@
           </li>
         </ul>
       </div>
-    </nav>
+    </nav> -->
 
     <div id="sidebar-options" uk-offcanvas>
       <div class="uk-offcanvas-bar">
@@ -399,12 +399,12 @@
         //Load localStorage if exists or set based on subdomain
         function getDefaultModelBySubdomain() {
           const hostname = window.location.hostname;
-          if (hostname.startsWith('swimsuit.')) {
+          if (hostname.startsWith("swimsuit.")) {
             return "assets/spine/ch0063_home/CH0063_home.skel";
           }
           return option.models.children[0].value;
         }
-        
+
         if (localStorage["blue-archive-res-model"]) {
           option.models.value = localStorage["blue-archive-res-model"];
         } else {
