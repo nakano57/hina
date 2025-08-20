@@ -19,6 +19,7 @@ function getDefaultModel() {
 
 function loadChar(model = getDefaultModel()) {
   isCharacterLoaded = false;
+  document.getElementById('loading').style.display = 'block';
   // remove previous spine
   if (app.stage.children.length > 0) {
     app.stage.children.pop();
@@ -130,6 +131,7 @@ function onAssetsLoaded(loader, res) {
   //Add to main canvas
   app.stage.addChild(char);
   isCharacterLoaded = true;
+  document.getElementById('loading').style.display = 'none';
 }
 
 function playAnimation(name) {
