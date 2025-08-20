@@ -12,7 +12,7 @@ function getDefaultModel() {
     return "./assets/spine/ch0063_home/CH0063_home.skel";
   }
   if (hostname.startsWith("dress.")) {
-    return "./assets/spine/ch230_home/CH230_home.skel";
+    return "./assets/spine/ch0230_home/CH0230_home.skel";
   }
   return "./assets/spine/hina_home/Hina_home.skel";
 }
