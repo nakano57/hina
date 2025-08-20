@@ -4,6 +4,7 @@ let audioList = [];
 let audios;
 let isCharacterLoaded = false;
 let debug = 0; //set via console
+let isFirstLoad = true;
 
 function loadChar(model = "./assets/spine/hina_home/Hina_home.skel") {
   isCharacterLoaded = false;
@@ -68,8 +69,15 @@ function onAssetsLoaded(loader, res) {
 
   //Play Animation
   if (check) {
-    char.state.setAnimation(0, "Idle_01", option.loop.checked);
-    optionAnimations.value = "Idle_01";
+    if (isFirstLoad && animations.find((a) => a.name === "Start_Idle_01")) {
+      char.state.setAnimation(0, "Start_Idle_01", false);
+      char.state.addAnimation(0, "Idle_01", option.loop.checked, 0);
+      optionAnimations.value = "Start_Idle_01";
+      isFirstLoad = false;
+    } else {
+      char.state.setAnimation(0, "Idle_01", option.loop.checked);
+      optionAnimations.value = "Idle_01";
+    }
   } else {
     char.state.setAnimation(0, animations[0].name, option.loop.checked);
   }
