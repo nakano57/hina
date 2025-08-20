@@ -317,6 +317,13 @@
           exportAnimation((FPS = parseInt(option.FPS.value)));
         };
 
+        // Keyboard shortcut to toggle sidebar
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape') {
+            UIkit.offcanvas('#sidebar-options').toggle();
+          }
+        });
+
         // On window resize
         window.onresize = function () {
           width = window.innerWidth;
