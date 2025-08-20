@@ -8,7 +8,7 @@ let isFirstLoad = true;
 
 function getDefaultModel() {
   const hostname = window.location.hostname;
-  if (hostname.startsWith("swimsuwit.")) {
+  if (hostname.startsWith("swimsuit.")) {
     return "./assets/spine/ch0063_home/CH0063_home.skel";
   }
   return "./assets/spine/hina_home/Hina_home.skel";
