@@ -45,26 +45,6 @@
   </head>
 
   <body>
-    <!-- <nav
-      class="uk-navbar-container uk-navbar-transparent"
-      uk-navbar
-      style="position: fixed"
-    >
-      <div class="uk-navbar-left">
-        <ul class="uk-navbar-nav uk-dotnav-vertical">
-          <li class="uk-active">
-            <button
-              class="uk-button uk-button-default"
-              type="button"
-              uk-toggle="target: #sidebar-options"
-            >
-              <span uk-icon="cog"></span>
-            </button>
-          </li>
-        </ul>
-      </div>
-    </nav> -->
-
     <div id="sidebar-options" uk-offcanvas>
       <div class="uk-offcanvas-bar">
         <button class="uk-offcanvas-close" type="button" uk-close></button>
@@ -75,13 +55,23 @@
         <select class="uk-select" id="optionAnimations"></select>
         <p>
           <label
-            ><input class="uk-checkbox" type="checkbox" id="optionLoop" />
+            ><input
+              class="uk-checkbox"
+              type="checkbox"
+              id="optionLoop"
+              checked
+            />
             Loop</label
           >
         </p>
         <p>
           <label
-            ><input class="uk-checkbox" type="checkbox" id="optionTalkSound" />
+            ><input
+              class="uk-checkbox"
+              type="checkbox"
+              id="optionTalkSound"
+              checked
+            />
             Play Talk Sound</label
           >
         </p>
@@ -318,9 +308,9 @@
         };
 
         // Keyboard shortcut to toggle sidebar
-        document.addEventListener('keydown', function(e) {
-          if (e.key === 'Escape') {
-            UIkit.offcanvas('#sidebar-options').toggle();
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") {
+            UIkit.offcanvas("#sidebar-options").toggle();
           }
         });
 
