@@ -131,7 +131,10 @@ function onAssetsLoaded(loader, res) {
   //Add to main canvas
   app.stage.addChild(char);
   isCharacterLoaded = true;
-  document.getElementById('loading').style.display = 'none';
+  // Ensure loading is hidden even with cache hits
+  setTimeout(() => {
+    document.getElementById('loading').style.display = 'none';
+  }, 100);
 }
 
 function playAnimation(name) {
