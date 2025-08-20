@@ -1,5 +1,5 @@
 {
   "hina_home": "assets/spine/hina_home/Hina_home.skel",
-  "swimsuit_hina_home": "assets/spine/ch0063_home/CH0063_home.skel",
-  "dress_hina_home": "assets/spine/ch0230_home/CH0230_home.skel"
+  "ch0063_home": "assets/spine/ch0063_home/CH0063_home.skel",
+  "ch0230_home": "assets/spine/ch0230_home/CH0230_home.skel"
 }
