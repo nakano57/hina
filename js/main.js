@@ -64,7 +64,7 @@ function onAssetsLoaded(loader, res) {
     let a = document.createElement("option");
     a.value = a.innerHTML = animations[i].name;
     option.animations.append(a);
-    if (animations[i].name == "Idle_01") check = 1;
+    if (animations[i].name == "Start_Idle_01") check = 1;
   }
 
   //Play Animation
